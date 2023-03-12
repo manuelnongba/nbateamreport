@@ -1,11 +1,9 @@
-/**
- * This file is just a silly example to show everything working in the browser.
- * When you're ready to start on your site, clear the file. Happy hacking!
- **/
+import { TeamsReader } from './TeamsReader';
+import { Summary } from './TeamDetails.js';
 
-import confetti from 'canvas-confetti';
+const teamsReader = TeamsReader.fromCsv('nbateams.csv');
 
-confetti.create(document.getElementById('canvas') as HTMLCanvasElement, {
-  resize: true,
-  useWorker: true,
-})({ particleCount: 200, spread: 200 });
+teamsReader.load();
+const summary = Summary.TeamDetailsWithHtmlReport('Arsenal');
+
+summary.buildAndPrintReport(teamsReader.teamDetails);
