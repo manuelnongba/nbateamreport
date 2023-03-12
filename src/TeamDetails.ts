@@ -1,6 +1,6 @@
 import { TeamAnalysis } from './Analysis';
 import { TeamData } from './TeamData';
-import { HtmlReport } from './displayresult/HtmlReport';
+import { HtmlReport } from './renderresult/HtmlReport';
 
 export interface Analyzer {
   run(matches: TeamData[]): string | undefined;
@@ -11,8 +11,6 @@ export interface OutputTarget {
 }
 
 export class Summary {
-  //'static' allows us to call a method without creating an instance
-
   static TeamDetailsWithHtmlReport(team: string): Summary {
     return new Summary(new TeamAnalysis(team), new HtmlReport());
   }

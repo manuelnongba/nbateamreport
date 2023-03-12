@@ -1,5 +1,3 @@
-// import { MatchResult } from './GameResult';
-
 export type TeamData = [
   number,
   number,
