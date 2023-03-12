@@ -11,8 +11,8 @@ export interface OutputTarget {
 }
 
 export class Summary {
-  static TeamDetailsWithHtmlReport(team: string): Summary {
-    return new Summary(new TeamAnalysis(team), new HtmlReport());
+  static TeamDetailsWithHtmlReport(nbaTeam: string): Summary {
+    return new Summary(new TeamAnalysis(nbaTeam), new HtmlReport());
   }
 
   constructor(public analyzer: Analyzer, public outputTarget: OutputTarget) {}
